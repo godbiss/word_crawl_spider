@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhu.commentSpider.dao.CommentMapper">
+    <insert id="addComment" useGeneratedKeys="true" keyProperty="id">
+        insert into comment values (#{id}, #{authorName}, #{content}, #{question});
+    </insert>
+
+    <select id="getAllComment" resultType="com.zhu.commentSpider.entities.Comment">
+        select * from comment;
+    </select>
+    <select id="getCommentById" resultType="com.zhu.commentSpider.entities.Comment">
+        select * from comment where id = #{id};
+    </select>
+
+
+</mapper>
